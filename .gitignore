@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+@"
+venv/
+db.sqlite3
+__pycache__/
+*.py[cod]
+"@ | Set-Content .gitignore
