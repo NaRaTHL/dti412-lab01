@@ -1,0 +1,79 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}
+    Home | CoursePortal
+{% endblock %}
+
+{% block content %}
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">
+            Welcome to CoursePortal
+        </h1>
+
+        <p class="col-md-8 fs-5">
+            Explore the courses offered by the IT Department
+            and learn more about our academic programs.
+        </p>
+
+        <a href="/courses/" class="btn btn-primary btn-lg">
+            Explore Courses
+        </a>
+    </div>
+</div>
+
+<!-- Total Courses -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Available Courses</h5>
+
+                <h2 class="text-primary">
+                    {{ total_courses }}
+                </h2>
+
+                <p class="card-text">
+                    Courses currently available in the catalog.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Course -->
+<h2 class="mb-3">Featured Course</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h4 class="card-title">
+            {{ featured_course.title }}
+        </h4>
+
+        <h6 class="text-muted">
+            {{ featured_course.code }}
+        </h6>
+
+        <p class="card-text">
+            {{ featured_course.description }}
+        </p>
+
+        <p>
+            <strong>Instructor:</strong>
+            {{ featured_course.instructor }}
+        </p>
+
+        <p>
+            <strong>Credits:</strong>
+            {{ featured_course.credits }}
+        </p>
+
+        <a href="/courses/{{ featured_course.id }}/"
+           class="btn btn-outline-primary">
+            View Course Details
+        </a>
+    </div>
+</div>
+
+{% endblock %}
